@@ -1,0 +1,111 @@
+baseURL = "https://regazofotografia.com/"
+# baseURL = "http://localhost:8000"
+languageCode = "es-ES"
+defaultContentLanguage = "es-ES"
+title = "Regazo Fotografía"
+theme = "personal-web"
+copyright = "© Regazo Fotografía"
+googleAnalytics = "UA-66444400-2"
+googleSiteVerification = "fV4mlXw9bo3ba8zRyTvsTU5OjiOnmMuaq9nREMS3t1c"
+enableEmoji = false
+enableRobotsTXT = true
+pygmentsUseClasses = true
+pygmentsCodeFences = true
+
+[taxonomies]
+  design = "designs"
+  tech = "techs"
+
+[blackfriday]
+  hrefTargetBlank = true
+
+[params]
+  breadcrumb = true
+  accentColor = "#dd88aa"
+  mainSections = ['portfolio'] # values: ['post', 'portfolio'] only accept one section, to be displayed bellow 404
+
+  [params.sidebar]
+    backgroundImage = '/images/bg-dscf1990.jpg' # header background image - default "/images/default_sidebar.jpg" - Photo by Tim Marshall on Unsplash
+    # gradientOverlay = '' # default: rgba(0,0,0,0.4),rgba(0,0,0,0.4)
+    logo = "/images/logo.png" # - default "/images/edna-west.jpg"
+
+  [params.intro]
+    main = "Hola, esto es Regazo Fotografía"
+    sub = "Fotografía documental de partos y familia en Cantabria"
+
+  [params.notFound]
+    gopher = "/images/gopher-dante.png" # checkout https://gopherize.me/
+    h1 = '¡Uops!'
+    p = "Parece que la página que buscas no existe"
+
+  [params.sections]
+    # Define how your sections will be called
+    # when automatically pulled. For instance in the 404 page
+    post = "article"
+    portfolio = "project"
+
+  [params.assets]
+    favicon = "/images/favicon.png"
+    customCSS = "/css/form.css"
+
+  # [params.social]
+  #   github = "https://github.com/"
+  #   twitter = "https://twitter.com/"
+  #   linkedin = "https://www.linkedin.com/in/"
+  #   medium = "https://medium.com/"
+  #   codepen = "https://codepen.io/"
+  #   facebook = "https://www.facebook.com/"
+  #   youtube = "https://www.youtube.com/"
+  #   instagram = "https://www.instagram.com/"
+  #   gitlab = "https://gitlab.com/"
+  #   keybase = "https://keybase.io/"
+
+  # [params.contact]
+  #   email = "info@regazofotografia.com"
+  #   text= "Escríbeme" # text of the contact link in the sidebar. If email params.contact.email is defined
+
+[menu]
+
+  [[menu.main]]
+    identifier = "about"
+    name = "Sobre mí"
+    title = "Sobre mí"
+    url = "/sobre-mi/"
+    weight = -130
+
+  [[menu.main]]
+    identifier = "contact"
+    name = "Contacta"
+    title = "Contacta"
+    url = "/contacta/"
+    weight = -120
+
+  # [[menu.main]]
+  #   identifier = "portfolio"
+  #   name = "Portfolio"
+  #   title = "Portfolio"
+  #   url = "/portfolio/"
+  #   weight = -110
+
+  # [[menu.main]]
+  #   identifier = "blog"
+  #   name = "Post"
+  #   title = "Blog section"
+  #   url = "/post/"
+  #   weight = -100
+
+[sitemap]
+  changefreq = "monthly"
+  filename = "sitemap.xml"
+  priority = 0.5
+
+[privacy]
+  [privacy.googleAnalytics]
+    anonymizeIP = true
+    disable = true
+    respectDoNotTrack = true
+    useSessionStorage = false
+  [privacy.twitter]
+    disable = false
+    enableDNT = true
+    simple = false
