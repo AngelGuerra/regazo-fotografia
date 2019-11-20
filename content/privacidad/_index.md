@@ -1,7 +1,7 @@
 ---
 title: Política de privacidad
 description: La Política de Protección de Datos de Regazo Fotografía descansa en el principio de responsabilidad proactiva
-images: []
+# images: []
 ---
 
 ## Política de privacidad

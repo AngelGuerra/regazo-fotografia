@@ -1,7 +1,7 @@
 ---
 title: Política de cookies
 description: Utilizamos cookies para facilitar la relación de los visitantes con nuestro contenido y para permitir elaborar estadísticas sobre las visitantes que recibimos
-images: []
+# images: []
 ---
 
 ## Política de cookies

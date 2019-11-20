@@ -1,10 +1,8 @@
 ---
 title: Fotógrafa autodidacta y mamá
 description: Hola, mi nombre es Luna y aquí te cuento un poco sobre mí
-images: ["/images/luna.jpg"]
+# images: ["/images/luna.jpg"]
 ---
-
-![Luna](/images/luna.jpg)
 
 La oportunidad de trabajar como fotógrafa de partos se ha presentado en mi vida sin yo buscarlo conscientemente, nunca pensé en ser fotógrafa profesional. Pero retratar lo que ocurre sin interferir en el proceso, dado mi carácter tímido, y observar desde una posición discreta me resulta conocido y cómodo.
 
