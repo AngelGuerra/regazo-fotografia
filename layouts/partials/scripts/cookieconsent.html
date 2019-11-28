@@ -1,0 +1,80 @@
+<script src="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.js" data-cfasync="false"></script>
+<script>
+    /**
+     * Habilita las cookies del sitio o aquellos scripts que instalan cookies
+     *
+     * @author Ángel Guerra <a.guerrarevilla@gmail.com>
+     * @returns void
+     */
+    function enableCookies() {
+        var script = document.createElement('script');
+        script.src = 'https://www.googletagmanager.com/gtag/js?id={{ .Site.GoogleAnalytics }}';
+        script.async = true;
+        document.head.appendChild(script);
+
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', '{{ .Site.GoogleAnalytics }}');
+    }
+
+    /**
+     * Borra todas las cookies del sitio
+     *
+     * @author Ángel Guerra <a.guerrarevilla@gmail.com>
+     * @return void
+     */
+    function disableCookies() {
+        document.cookie.split(";").forEach(function (c) {
+            document.cookie = c.replace(/^ +/, "").replace(/=.*/, "=;expires=" + new Date().toUTCString() + ";path=/");
+        });
+    }
+
+    window.addEventListener("load", function () {
+        window.cookieconsent.initialise({
+            // "cookie": {
+            //   "domain": '.regazofotografia.com',
+            //   "secure": true
+            // },
+            "palette": {
+                "popup": {
+                    "background": "#112f41",
+                    "text": "#ffffff"
+                },
+                "button": {
+                    "background": "#dd88aa",
+                    "text": "#112f41"
+                }
+            },
+            "revokable": true,
+            "dismissOnWindowClick": true,
+            "position": "top",
+            "type": "opt-in",
+            "content": {
+                "message": "Esta web utiliza cookies para obtener datos estadísticos de la navegación de los usuarios. Si aceptas o continúas navegando, consideramos que aceptas su uso.",
+                "dismiss": "Lo tengo",
+                "deny": "No acepto",
+                "allow": "Acepto",
+                "link": "Quiero saber más",
+                "href": "https://www.regazofotografia.com/cookies/",
+                "policy": "Política de cookies"
+            },
+            // This is called on start up, with the current chosen compliance. It can be used to tell you if the user has already consented or not as soon as you initialise the tool.
+            "onInitialise": function (status) {
+                if (this.hasConsented()) {
+                    enableCookies();
+                }
+            },
+            // This is called any time the status is changed. This can be used to react to changes that are made to the compliance level. You can use the popup instance functions from within these callbacks too. I.E. ‘this.hasAnswered()’ and ‘this.hasConsented()’.
+            "onStatusChange": function (status, chosenBefore) {
+                if (this.hasConsented()) {
+                    enableCookies();
+                }
+            },
+            // This is called when the user clicks the ‘revoke’ button. This means that their current choice has been invalidated.
+            "onRevokeChoice": function () {
+                disableCookies();
+            },
+        });
+    });
+</script>
