@@ -5,9 +5,11 @@
 
 {{ $syntax := resources.Get "syntax.css" | minify }}
 {{ $form := resources.Get "css/form.css" | minify }}
+{{ $buttons := resources.Get "css/buttons.css" | minify }}
 
 <link href="https://fonts.googleapis.com/css?family=Montserrat:500,600|Raleway:400,400i,600" rel="stylesheet" />
 <link rel="stylesheet" href="{{ $style.Permalink }}" integrity="{{ $style.Data.Integrity }}" media="screen" />
 <link rel="stylesheet" href="{{ $syntax.Permalink }}" integrity="{{ $syntax.Data.Integrity }}" media="screen" />
 <link rel="stylesheet" href="{{ $form.Permalink }}" integrity="{{ $form.Data.Integrity }}" media="screen" />
+<link rel="stylesheet" href="{{ $buttons.Permalink }}" integrity="{{ $buttons.Data.Integrity }}" media="screen" />
 <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.css" type="text/css" />

@@ -6,7 +6,7 @@ images: ["/images/sample.jpg"]
 
 ## ¡Hola!
 
-Esto es **Regazo Fotografía**  la página web va creciendo pasito a pasito pero si estás en **Cantabria** o alrededores, y quieres saber más, no dudes en ponerte en contacto :-)
+Esto es **Regazo Fotografía**  la página web va creciendo pasito a pasito pero si estás en **Cantabria o alrededores**, y quieres saber más, [no dudes en ponerte en contacto](/contacta "Contacta conmigo") :-)
 
 Con mi fotografía busco la sencillez y realismo de momentos cotidianos e íntimos sin intervenir, para que el resultado sea natural, sin poses. 
 

@@ -32,10 +32,10 @@
 
     window.addEventListener("load", function () {
         window.cookieconsent.initialise({
-            // "cookie": {
-            //   "domain": '.regazofotografia.com',
-            //   "secure": true
-            // },
+            "cookie": {
+              "domain": '.regazofotografia.com',
+              "secure": true
+            },
             "palette": {
                 "popup": {
                     "background": "#112f41",
@@ -46,7 +46,7 @@
                     "text": "#112f41"
                 }
             },
-            "revokable": true,
+            "revokable": false,
             "dismissOnWindowClick": true,
             "position": "top",
             "type": "opt-in",
