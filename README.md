@@ -1,10 +1,10 @@
 # Regazo Fotografía
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/3f25361b-bf17-41ae-8dac-6dc3ca967f17/deploy-status)](https://app.netlify.com/sites/regazofotografia/deploys)
-![Website](https://img.shields.io/website?down_color=b71c1c&down_message=offline&up_color=76ff03&up_message=online&url=https%3A%2F%2Fwww.regazofotografia.com)
-![Security Headers](https://img.shields.io/security-headers?url=https%3A%2F%2Fregazofotografia.com)
-![Mozilla HTTP Observatory Grade](https://img.shields.io/mozilla-observatory/grade-score/regazofotografia.com?publish)
-![Chromium HSTS preload](https://img.shields.io/hsts/preload/regazofotografia.com)
+[![Website](https://img.shields.io/website?down_color=b71c1c&down_message=offline&up_color=76ff03&up_message=online&url=https%3A%2F%2Fwww.regazofotografia.com)](https://regazofotografia.com)
+[![Security Headers](https://img.shields.io/security-headers?url=https%3A%2F%2Fregazofotografia.com)](https://regazofotografia.com)
+[![Mozilla HTTP Observatory Grade](https://img.shields.io/mozilla-observatory/grade-score/regazofotografia.com?publish)](https://observatory.mozilla.org/analyze/regazofotografia.com?third-party=false)
+[![Chromium HSTS preload](https://img.shields.io/hsts/preload/regazofotografia.com)](https://hstspreload.org/)
 
 ## Desarrollo
 

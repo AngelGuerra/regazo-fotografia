@@ -45,8 +45,8 @@ disableKinds = ["taxonomy", "taxonomyTerm"]
     post = "article"
     portfolio = "project"
 
-  [params.assets]
-    favicon = "/images/favicon.png"
+  # [params.assets]
+    # favicon = "/images/favicon.png"
     # customCSS = "/css/form.css"
 
   # [params.social]
