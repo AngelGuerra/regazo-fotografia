@@ -87,6 +87,12 @@ figure
       text-align: center
 
 header
+  display: flex
+  flex-direction: column
+  flex-wrap: nowrap
+  justify-content: flex-end
+  align-content: flex-start
+  align-items: flex-start
   width: $sidebar-width
   background-size: cover
   background-position: top center
@@ -103,11 +109,14 @@ header
       margin-bottom: 0px
 
   .socials
+    display: flex
+    flex-direction: row
+    flex-wrap: wrap
+    justify-content: flex-start
+    align-content: flex-start
+    align-items: flex-start
     padding: $padding-content
-    bottom: 0px
-    position: fixed
     border: 0
-    max-width: $sidebar-width
 
     .social-link a, a:visited, a:focus, a:active
       svg
@@ -134,13 +143,16 @@ header
       border-bottom: $grey-100 1px dashed
 
   .intro
+    display: flex
+    flex-direction: column
+    flex-wrap: nowrap
+    justify-content: flex-end
+    align-content: flex-start
+    align-items: flex-start
     padding: $padding-content
-    position: absolute
-    bottom: 140px
 
   .rounded-logo
     +rounded
-    margin-bottom: 4/3*$margin-blocks
     display: block
     box-shadow: $box-shadow
 
@@ -149,9 +161,6 @@ header
 
     .intro
       bottom: 150px
-
-    .socials
-      max-width: $sidebar-width-tablet
 
   +smartphone
     position: relative
