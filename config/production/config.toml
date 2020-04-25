@@ -28,7 +28,7 @@ disableKinds = ["taxonomy", "taxonomyTerm"]
   [params.sidebar]
     backgroundImage = '/images/bg-dscf1990.jpg' # header background image - default "/images/default_sidebar.jpg" - Photo by Tim Marshall on Unsplash
     # gradientOverlay = '' # default: rgba(0,0,0,0.4),rgba(0,0,0,0.4)
-    logo = "/images/profile.JPG?nf_resize=fit&w=150" # - default "/images/edna-west.jpg"
+    logo = "/images/profile.JPG" # - default "/images/edna-west.jpg"
 
   [params.intro]
     main = "Hola, esto es Regazo Fotografía"
