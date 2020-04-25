@@ -81,12 +81,12 @@ disableKinds = ["taxonomy", "taxonomyTerm"]
     url = "/contacta/"
     weight = -120
 
-  # [[menu.main]]
-  #   identifier = "portfolio"
-  #   name = "Galería"
-  #   title = "Galería"
-  #   url = "/porfolio/"
-  #   weight = -110
+  [[menu.main]]
+    identifier = "portfolio"
+    name = "Galería"
+    title = "Galería"
+    url = "/porfolio/"
+    weight = -110
 
   # [[menu.main]]
   #   identifier = "blog"

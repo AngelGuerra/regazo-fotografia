@@ -6,7 +6,7 @@ jobDate: 2019
 work: [familia, lactancia]
 # techs: [javascript, D3]
 # designs: [Photoshop]
-thumbnail: /images/noelia/DSCF6006.JPG
+thumbnail: /images/noelia/DSCF6006.JPG?nf_resize=fit&w=720
 # projectUrl: https://www.sampleorganization.org
 images:
   - src: /images/noelia/DSCF6006.JPG
