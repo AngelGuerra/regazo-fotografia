@@ -85,7 +85,7 @@ disableKinds = ["taxonomy", "taxonomyTerm"]
     identifier = "portfolio"
     name = "Galería"
     title = "Galería"
-    url = "/porfolio/"
+    url = "/portfolio/"
     weight = -110
 
   # [[menu.main]]
