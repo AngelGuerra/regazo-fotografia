@@ -1,0 +1,18 @@
+<div class="portfolio-list">
+  <a href="{{.Permalink}}">
+    <div class="portfolio-container">
+      <img
+        src="{{ .Params.Thumbnail }}?nf_resize=fit&w=720"
+        srcset="{{ .Params.Thumbnail }}?nf_resize=fit&w=720 720w, {{ .Params.Thumbnail }}?nf_resize=fit&w=580 580w"
+        sizes="(max-width: 768px) 720px, (max-width: 1024px) 580px, 720px"
+        title="{{.Title}}"
+        alt="{{.Title}}" />
+      <div class="img-overlay"></div>
+      <div class="portfolio-details">
+        <h2><span>{{ .Title }}</span></h2>
+        <p class="small">{{ delimit .Params.Work ", " | safeHTML }}</p>
+        <p class="small">{{ .Params.jobDate }}</p>
+      </div>
+    </div>
+  </a>
+</div>

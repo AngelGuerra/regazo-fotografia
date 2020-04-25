@@ -6,6 +6,20 @@
     <p>Utiliza <a href="//gohugo.io/" target="_blank" rel="external">Hugo</a>, el tema <a href="//github.com/bjacquemet/personal-web" target='_blank' rel="external">Personal Web</a> y se despliega con <a href="//www.netlify.com/" target="_blank" rel="external">Netlify</a>.</p>
   </div>
 </footer>
-{{ partial "scripts/cookieconsent" .}}
+
+{{ partial "gallery" .}}
+
+{{ $photoswipe := resources.Get "vendor/photoswipe/dist/photoswipe.min.js" }}
+{{ $photoswipeUIDefault := resources.Get "vendor/photoswipe/dist/photoswipe-ui-default.min.js" }}
+{{ $gallery := resources.Get "js/gallery.js" | minify }}
+{{ $common := resources.Get "js/common.js" | minify }}
+
+<script src="{{ $photoswipe.Permalink }}" integrity="{{ $photoswipe.Data.Integrity }}"></script>
+<script src="{{ $photoswipeUIDefault.Permalink }}" integrity="{{ $photoswipeUIDefault.Data.Integrity }}"></script>
+<script src="{{ $gallery.Permalink }}" integrity="{{ $gallery.Data.Integrity }}"></script>
+<script src="{{ $common.Permalink }}" integrity="{{ $common.Data.Integrity }}"></script>
+{{ if not .Site.IsServer }}
+  {{ partial "scripts/analytics" .}}
+{{ end }}
 </body>
 </html>

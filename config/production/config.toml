@@ -5,7 +5,7 @@ title = "Regazo Fotografía"
 theme = "personal-web"
 copyright = "© Regazo Fotografía"
 googleAnalytics = "UA-66444400-2"
-enableEmoji = false
+enableEmoji = true
 enableRobotsTXT = true
 pygmentsUseClasses = true
 pygmentsCodeFences = true
@@ -20,7 +20,7 @@ disableKinds = ["taxonomy", "taxonomyTerm"]
   hrefTargetBlank = true
 
 [params]
-  breadcrumb = false
+  breadcrumb = true
   accentColor = "#dd88aa"
   mainSections = ['portfolio'] # values: ['post', 'portfolio'] only accept one section, to be displayed bellow 404
   googleSiteVerification = "fV4mlXw9bo3ba8zRyTvsTU5OjiOnmMuaq9nREMS3t1c"
@@ -55,7 +55,7 @@ disableKinds = ["taxonomy", "taxonomyTerm"]
   #   linkedin = "https://www.linkedin.com/in/"
   #   medium = "https://medium.com/"
   #   codepen = "https://codepen.io/"
-  #   facebook = "https://www.facebook.com/"
+    facebook = "https://www.facebook.com/regazofotografia"
   #   youtube = "https://www.youtube.com/"
     instagram = "https://www.instagram.com/regazofotografia/"
   #   gitlab = "https://gitlab.com/"
@@ -83,9 +83,9 @@ disableKinds = ["taxonomy", "taxonomyTerm"]
 
   # [[menu.main]]
   #   identifier = "portfolio"
-  #   name = "Portfolio"
-  #   title = "Portfolio"
-  #   url = "/portfolio/"
+  #   name = "Galería"
+  #   title = "Galería"
+  #   url = "/porfolio/"
   #   weight = -110
 
   # [[menu.main]]

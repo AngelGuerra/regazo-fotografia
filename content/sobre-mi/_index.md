@@ -4,6 +4,10 @@ description: Hola, mi nombre es Luna y aquí te cuento un poco sobre mí
 # images: ["/images/luna.jpg"]
 ---
 
+### Luna L. Gutiérrez
+
+Ésta soy yo :smile:.
+
 La oportunidad de trabajar como fotógrafa de partos se ha presentado en mi vida sin yo buscarlo conscientemente, nunca pensé en ser fotógrafa profesional. Pero retratar lo que ocurre sin interferir en el proceso, dado mi carácter tímido, y observar desde una posición discreta me resulta conocido y cómodo.
 
 Poder dedicarme a este proyecto profesional lo considero un sueño que se ha formado sin yo saber que era un sueño. Que me permite poder dedicar el tiempo que yo quiero a la crianza de mis pequeños; gracias a que el trabajo de mi pareja nos da seguridad, y también trabajar en algo que me gusta y nutre emocionalmente y que considero mucho más que una simple sesión fotográfica.

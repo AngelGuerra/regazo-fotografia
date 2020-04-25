@@ -1,0 +1,41 @@
+{{ partial "header" .}}
+
+<h1>{{ .Title }}</h1>
+<div class="tags">
+  {{ partial "portfolio/tags" .}}
+</div>
+
+<img title="{{.Title}}" alt="{{.Title}}" src="{{ .Params.Thumbnail }}" />
+
+{{ .Content }}
+
+{{ if .Params.testimonial }}
+  <h3>Testimonial</h3>
+  <div class="testimonial-list">
+    {{ with .Params.testimonial }} {{ partial "portfolio/testimonial" . }} {{ end }}
+  </div>
+{{ end }}
+
+{{ if .Params.images }}
+  <div class="gallery" itemscope itemtype="http://schema.org/ImageGallery">
+    {{ range $index, $image := .Params.images }}
+      <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject"{{ if $image.vertical }} class="vertical"{{ end }}>
+        <a href="{{ $image.src }}?nf_resize=fit&w=1920" itemprop="contentUrl" data-size="1920x1280">
+          <img
+            srcset="{{ $image.src }}?nf_resize=fit&w=720 720w, {{ $image.src }}?nf_resize=fit&w=300 300w, {{ $image.src }}?nf_resize=fit&w=240 240w"
+            sizes="(max-width: 768px) 720px, (max-width: 1024px) 300px, 240px"
+            src="{{ $image.src }}?nf_resize=fit&w=1920"
+            alt="{{ $image.alt }}"
+            itemprop="thumbnail" />
+        </a>
+
+        <figcaption itemprop="caption description">
+          {{ $image.alt }}
+          <span itemprop="copyrightHolder">Fotografía: &copy; Regazo Fotografía</span>
+        </figcaption>
+      </figure>
+    {{ end }}
+  </div>
+{{ end }}
+
+{{ partial "footer" .}}

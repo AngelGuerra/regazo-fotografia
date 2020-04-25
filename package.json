@@ -1,0 +1,11 @@
+{
+  "name": "regazo-fotografia",
+  "version": "1.0.0",
+  "repository": "git@github.com:AngelGuerra/regazo-fotografia.git",
+  "author": "Ángel Guerra <a.guerrarevilla@gmail.com>",
+  "license": "Copyright Regazo Fotografía 2020 - presente",
+  "private": true,
+  "dependencies": {
+    "photoswipe": "^4.1.3"
+  }
+}

@@ -14,13 +14,16 @@
 # Instala la versión extended de Hugo
 snap install hugo --channel=extended # OpenSUSE
 
+# Dependencias
+yarn install
+
 # Dev
 hugo server -w --bind=0.0.0.0 # --enviroment=production
 # Desde que se habilitó el lfs
 GIT_CONFIG_NOSYSTEM=true hugo server -w --bind=0.0.0.0
 
 # Build
-hugo # --gc --minify
+hugo --gc --minify
 ```
 
 ### Docker

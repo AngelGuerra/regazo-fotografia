@@ -1,15 +1,20 @@
 {{ $variables := resources.Get "sass/_variables.sass" }}
 {{ $scaffold := resources.Get "sass/scaffold.sass" }}
 {{ $custom := resources.Get "sass/custom.sass" }}
-{{ $style := slice $variables $scaffold $custom | resources.Concat "sass/style.sass" | toCSS | minify | fingerprint }}
+{{ $gallery := resources.Get "sass/gallery.sass" }}
+{{ $style := slice $variables $scaffold $gallery $custom | resources.Concat "sass/style.sass" | toCSS | minify | fingerprint }}
 
 {{ $syntax := resources.Get "syntax.css" | minify }}
 {{ $form := resources.Get "css/form.css" | minify }}
 {{ $buttons := resources.Get "css/buttons.css" | minify }}
+
+{{ $photoswipe := resources.Get "vendor/photoswipe/dist/photoswipe.css" | minify }}
+{{ $photoswipeDefaultSkin := resources.Get "vendor/photoswipe/dist/default-skin/default-skin.css" | minify }}
 
 <link href="//fonts.googleapis.com/css?family=Montserrat:500,600|Raleway:400,400i,600" rel="stylesheet" />
 <link rel="stylesheet" href="{{ $style.Permalink }}" integrity="{{ $style.Data.Integrity }}" media="screen" />
 <link rel="stylesheet" href="{{ $syntax.Permalink }}" integrity="{{ $syntax.Data.Integrity }}" media="screen" />
 <link rel="stylesheet" href="{{ $form.Permalink }}" integrity="{{ $form.Data.Integrity }}" media="screen" />
 <link rel="stylesheet" href="{{ $buttons.Permalink }}" integrity="{{ $buttons.Data.Integrity }}" media="screen" />
-<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.css" type="text/css" />
+<link rel="stylesheet" href="{{ $photoswipe.Permalink }}" integrity="{{ $photoswipe.Data.Integrity }}" type="text/css" />
+<link rel="stylesheet" href="{{ $photoswipeDefaultSkin.Permalink }}" integrity="{{ $photoswipeDefaultSkin.Data.Integrity }}" type="text/css" />
