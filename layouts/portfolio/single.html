@@ -5,7 +5,12 @@
   {{ partial "portfolio/tags" .}}
 </div>
 
-<img title="{{.Title}}" alt="{{.Title}}" src="{{ .Params.Thumbnail }}" />
+<img
+  src="{{ .Params.Thumbnail }}?nf_resize=fit&w=720"
+  srcset="{{ .Params.Thumbnail }}?nf_resize=fit&w=720 720w, {{ .Params.Thumbnail }}?nf_resize=fit&w=580 580w"
+  sizes="(max-width: 768px) 720px, (max-width: 1024px) 580px, 720px"
+  title="{{.Title}}"
+  alt="{{.Title}}" />
 
 {{ .Content }}
 
