@@ -101,7 +101,7 @@
             "dateModified": "{{ .Lastmod.Format "2006-01-02" }}",
             "image": {
                 "@type": "imageObject",
-                "url": "{{ with .Params.thumbnail }}{{ . | absURL }}{{ end }}"
+                "url": "{{ .Params.thumbnail | default .Site.Params.ogimage | absURL }}"
             },
             "publisher": {
                 "@type": "Organization",
