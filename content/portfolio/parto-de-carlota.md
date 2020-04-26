@@ -87,8 +87,8 @@ images:
     alt: Leo, en el regazo de Carlota, es arropado por un pañuelo con los colores del arcoíris, arcoíris que lució el cielo esa misma mañana, bebé arcoíris es el que llega tras haber sufrido la pérdida de un anterior hijo
 testimonial:
   name: Carlota
-  #   role: CEO @Example
-  image: /images/parto-de-carlota/parto_carlota_03.JPG
+  # role: CEO @Example
+  # image: /images/parto-de-carlota/parto_carlota_03.JPG
   text: Recomendaría a Luna sin duda alguna a todas las familias que quieran tener un recuerdo inolvidable del nacimiento de sus hijes, por su profesionalidad y el cuidado y el amor que pone en su trabajo
 ---
 
