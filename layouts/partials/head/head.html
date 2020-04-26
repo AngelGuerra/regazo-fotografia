@@ -1,6 +1,4 @@
-<head>
-  <title>{{.Params.title}} - {{ $.Site.Title}}</title>
-  <link rel='canonical' href='{{ .Permalink }}' />
-  {{ partial "head/meta" .}}
-  {{ partial "head/style" .}}
+<head itemscope itemtype="{{ .Site.BaseURL }}">
+  {{ partial "head/meta" . }}
+  {{ partial "head/style" . }}
 </head>

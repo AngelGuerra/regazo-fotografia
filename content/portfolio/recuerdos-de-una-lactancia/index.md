@@ -2,8 +2,9 @@
 title: Recuerdos de una lactancia
 description: Sesión fotográfica sobre lactancia realizada a Noelia. Quedamos en su casa para estar más relajados y enseguida conectamos olvidando la timidez inicial y Aimar fue todo simpatía, no fue nada difícil trabajar con él
 date: "2019-05-02T19:47:09+02:00"
+author: Regazo Fotografía
 jobDate: 2019
-work: [familia, lactancia]
+work: [lactancia, familia]
 # techs: [javascript, D3]
 # designs: [Photoshop]
 thumbnail: /images/noelia/DSCF6006.JPG

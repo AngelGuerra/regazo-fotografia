@@ -1,15 +1,20 @@
 baseURL = "https://regazofotografia.com/"
-languageCode = "es-ES"
-defaultContentLanguage = "es-ES"
 title = "Regazo Fotografía"
+
+languageCode = "es-es"
+defaultContentLanguage = "es"
+# paginate = 10
+
+enableEmoji = true
+enableGitInfo = true
+enableRobotsTXT = false
+canonifyURLs = true
+
 theme = "personal-web"
 copyright = "© Regazo Fotografía"
 googleAnalytics = "UA-66444400-2"
-enableEmoji = true
-enableRobotsTXT = true
 pygmentsUseClasses = true
 pygmentsCodeFences = true
-enableGitInfo = true
 disableKinds = ["taxonomy", "taxonomyTerm"]
 
 # [taxonomies]
@@ -19,11 +24,19 @@ disableKinds = ["taxonomy", "taxonomyTerm"]
 [blackfriday]
   hrefTargetBlank = true
 
+[languages]
+  [languages.es]
+    languageName = "Spanish"
+    languageCode = "es-es"
+    weight = 1
+
 [params]
   breadcrumb = true
   accentColor = "#dd88aa"
   mainSections = ['portfolio'] # values: ['post', 'portfolio'] only accept one section, to be displayed bellow 404
   googleSiteVerification = "fV4mlXw9bo3ba8zRyTvsTU5OjiOnmMuaq9nREMS3t1c"
+  author = "Regazo Fotografía"
+  ogimage = "/images/logo.png"
 
   [params.sidebar]
     backgroundImage = '/images/bg-dscf1990.jpg' # header background image - default "/images/default_sidebar.jpg" - Photo by Tim Marshall on Unsplash

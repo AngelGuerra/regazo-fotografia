@@ -1,11 +1,41 @@
 <script>
-  window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-  // @see https://developers.google.com/analytics/devguides/collection/analyticsjs/cookies-user-id#disabling_cookies
-  ga("create", "{{ .Site.GoogleAnalytics }}", {
-    storage: "none",
-  });
+  var isDoNotTrackEnabled = function () {
+    if (typeof window === "undefined") return false;
+    var _window = window,
+      doNotTrack = _window.doNotTrack,
+      navigator = _window.navigator; // Do Not Track Settings across browsers
 
-  ga("send", "pageview");
-  ga("set", "anonymizeIp", true);
+    var dnt = doNotTrack || navigator.doNotTrack || navigator.msDoNotTrack || msTracking();
+    if (!dnt) return false;
+
+    if (dnt === true || dnt === 1 || dnt === "yes" || (typeof dnt === "string" && dnt.charAt(0) === "1")) {
+      return true;
+    }
+
+    return false;
+  };
+
+  var msTracking = function () {
+    var _window2 = window,
+      external = _window2.external;
+    return (
+      "msTrackingProtectionEnabled" in external &&
+      typeof external.msTrackingProtectionEnabled === "function" &&
+      window.external.msTrackingProtectionEnabled()
+    );
+  };
+
+  if (isDoNotTrackEnabled()) {
+    console.log("Respecting Do-Not-Track, not loading analytics.");
+  } else {
+    window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+
+    // @see https://developers.google.com/analytics/devguides/collection/analyticsjs/cookies-user-id#disabling_cookies
+    ga("create", "{{ .Site.GoogleAnalytics }}", {
+      storage: "none",
+    });
+    ga("send", "pageview");
+    ga("set", "anonymizeIp", true);
+  }
 </script>
 <script async src="https://www.google-analytics.com/analytics.js"></script>

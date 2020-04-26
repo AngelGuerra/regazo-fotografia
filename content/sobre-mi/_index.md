@@ -1,6 +1,7 @@
 ---
 title: Fotógrafa autodidacta y mamá
-description: Hola, mi nombre es Luna y aquí te cuento un poco sobre mí
+description: Hola, mi nombre es Luna y aquí te cuento un poco sobre mí y sobre las personas a las que tengo presentes a la hora de realizar mi proyecto
+thumbnail: /images/profile.JPG
 # images: ["/images/luna.jpg"]
 ---
 

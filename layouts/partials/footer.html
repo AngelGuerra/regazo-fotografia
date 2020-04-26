@@ -18,8 +18,8 @@
 <script src="{{ $photoswipeUIDefault.Permalink }}" integrity="{{ $photoswipeUIDefault.Data.Integrity }}"></script>
 <script src="{{ $gallery.Permalink }}" integrity="{{ $gallery.Data.Integrity }}"></script>
 <script src="{{ $common.Permalink }}" integrity="{{ $common.Data.Integrity }}"></script>
-{{ if not .Site.IsServer }}
-  {{ partial "scripts/analytics" .}}
+{{ if eq hugo.Environment "production" }}
+  {{ partial "scripts/analytics" . }}
 {{ end }}
 </body>
 </html>
