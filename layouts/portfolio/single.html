@@ -9,13 +9,14 @@
   src="{{ .Params.Thumbnail }}?nf_resize=fit&w=720"
   srcset="{{ .Params.Thumbnail }}?nf_resize=fit&w=720 720w, {{ .Params.Thumbnail }}?nf_resize=fit&w=580 580w"
   sizes="(max-width: 768px) 720px, (max-width: 1024px) 580px, 720px"
-  title="{{.Title}}"
-  alt="{{.Title}}" />
+  title="{{ .Title }}"
+  alt="{{ .Title }}" />
 
-{{ .Content }}
+<section{{ if .Params.customtextclass }} class="{{ .Params.customtextclass }}"{{ end }}>
+  {{ .Content }}
+</section>
 
 {{ if .Params.testimonial }}
-  <h3>Testimonial</h3>
   <div class="testimonial-list">
     {{ with .Params.testimonial }} {{ partial "portfolio/testimonial" . }} {{ end }}
   </div>

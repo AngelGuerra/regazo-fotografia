@@ -1,7 +1,7 @@
 ---
 title: Fotografía documental de partos y familia en Cantabria
 description: Con mi fotografía busco la sencillez y realismo de momentos cotidianos e íntimos sin intervenir, para que el resultado sea natural, sin poses
-images: ["/images/sample.jpg"]
+# images: ["/images/sample.jpg"]
 ---
 
 ## ¡Hola!

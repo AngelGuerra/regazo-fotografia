@@ -1,0 +1,6 @@
+<div class="testimonial-container">
+  {{ if .image }}<img class="rounded-img" src="{{ .image }}?nf_resize=smartcrop&w=150&h=150" alt="{{ .name }}" title="{{ .name }}" />{{ end }}
+  {{ with .name }}<p class="testimonial-name">{{ . }}</p>{{ end }}
+  {{ with .role }}<p class="testimonial-role">{{ . }}</p>{{ end }}
+  <blockquote class="testimonial-text">{{ .text }}</blockquote>
+</div>
