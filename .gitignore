@@ -21,3 +21,6 @@ hugo.linux
 
 # Yarn
 /assets/vendor
+
+# Lighthouse
+/lighthouse
