@@ -10,7 +10,7 @@ enableGitInfo = true
 enableRobotsTXT = false
 canonifyURLs = true
 
-theme = "personal-web"
+# theme = "personal-web"
 copyright = "© Regazo Fotografía"
 googleAnalytics = "UA-66444400-2"
 pygmentsUseClasses = true
