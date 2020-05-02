@@ -42,7 +42,7 @@
 {{ end }}
 
 <!-- DATE TAGS -->
-<meta property="og:updated_time" content={{ .Lastmod.Format "2006-01-02T15:04:05Z0700" | safeHTML }} />
+<meta property="og:updated_time" content="{{ .Lastmod.Format "2006-01-02T15:04:05Z0700" | safeHTML }}" />
 
 <!-- SITEMAP & RRS FEED TAGS -->
 <link rel="sitemap" type="application/xml" title="Sitemap" href="{{ .Sitemap.Filename | absURL  }}" /> 
@@ -110,10 +110,11 @@
             "@type": "WebSite", 
             "url": "{{ .Permalink }}", 
             "sameAs": [
-                {{ delimit .Site.Params.social ", " }}
+                "{{ .Site.Params.social.facebook }}",
+                "{{ .Site.Params.social.instagram }}"
             ], 
             "name": "{{ .Title }}",
-            "logo": "{{ .Site.Params.ogimage | absURL }}" 
+            "image": "{{ .Site.Params.ogimage | absURL }}" 
         }
     </script>
 {{ end }}
