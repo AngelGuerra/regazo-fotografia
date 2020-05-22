@@ -1,6 +1,7 @@
-"use strict";
+import PhotoSwipe from "photoswipe";
+import PhotoSwipeUI_Default from "photoswipe/dist/photoswipe-ui-default";
 
-(function () {
+export default function initPhotoswipe() {
   var initPhotoSwipeFromDOM = function (gallerySelector) {
     // parse slide data (url, title, size ...) from DOM elements
     // (children of gallerySelector)
@@ -197,5 +198,5 @@
   };
 
   // execute above function
-  initPhotoSwipeFromDOM(".gallery");
-})();
+  initPhotoSwipeFromDOM("[data-photoswipe]");
+}

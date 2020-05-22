@@ -3,14 +3,12 @@ title = "Regazo Fotografía"
 
 languageCode = "es-es"
 defaultContentLanguage = "es"
-# paginate = 10
 
 enableEmoji = true
 enableGitInfo = true
 enableRobotsTXT = false
 canonifyURLs = true
 
-# theme = "personal-web"
 copyright = "© Regazo Fotografía"
 googleAnalytics = "UA-66444400-2"
 pygmentsUseClasses = true
@@ -36,31 +34,22 @@ disableKinds = ["taxonomy", "taxonomyTerm"]
   mainSections = ['portfolio'] # values: ['post', 'portfolio'] only accept one section, to be displayed bellow 404
   googleSiteVerification = "fV4mlXw9bo3ba8zRyTvsTU5OjiOnmMuaq9nREMS3t1c"
   author = "Regazo Fotografía"
-  ogimage = "/images/logo.png"
+  intro = "Bienvenid@ a <strong><a href=\"/\">Regazo Fotografía</a></strong>, fotografía documental de partos y familias en Cantabria"
+
+  [params.ogimage]
+    url = "/images/logo.png"
+    width = 1024
+    height = 1024
 
   [params.sidebar]
-    backgroundImage = '/images/bg-dscf1990.jpg' # header background image - default "/images/default_sidebar.jpg" - Photo by Tim Marshall on Unsplash
-    # gradientOverlay = '' # default: rgba(0,0,0,0.4),rgba(0,0,0,0.4)
-    logo = "/images/profile.JPG" # - default "/images/edna-west.jpg"
-
-  [params.intro]
-    main = "Hola, esto es Regazo Fotografía"
-    sub = "Fotografía documental de partos y familia en Cantabria"
-
-  [params.notFound]
-    gopher = "/images/gopher-dante.png" # checkout https://gopherize.me/
-    h1 = '¡Uops!'
-    p = "Parece que la página que buscas no existe"
+    backgroundImage = "/images/bg-dscf1990.jpg"
+    logo = "/images/profile.JPG"
 
   [params.sections]
     # Define how your sections will be called
     # when automatically pulled. For instance in the 404 page
     post = "article"
     portfolio = "project"
-
-  # [params.assets]
-    # favicon = "/images/favicon.png"
-    # customCSS = "/css/form.css"
 
   [params.social]
   #   github = "https://github.com/"
@@ -73,40 +62,6 @@ disableKinds = ["taxonomy", "taxonomyTerm"]
     instagram = "https://www.instagram.com/regazofotografia/"
   #   gitlab = "https://gitlab.com/"
   #   keybase = "https://keybase.io/"
-
-  # [params.contact]
-  #   email = "info@regazofotografia.com"
-  #   text= "Escríbeme" # text of the contact link in the sidebar. If email params.contact.email is defined
-
-[menu]
-
-  [[menu.main]]
-    identifier = "about"
-    name = "Sobre mí"
-    title = "Sobre mí"
-    url = "/sobre-mi/"
-    weight = -130
-
-  [[menu.main]]
-    identifier = "contact"
-    name = "Contacta"
-    title = "Contacta"
-    url = "/contacta/"
-    weight = -120
-
-  [[menu.main]]
-    identifier = "portfolio"
-    name = "Galería"
-    title = "Galería"
-    url = "/portfolio/"
-    weight = -110
-
-  # [[menu.main]]
-  #   identifier = "blog"
-  #   name = "Post"
-  #   title = "Blog section"
-  #   url = "/post/"
-  #   weight = -100
 
 [sitemap]
   changefreq = "monthly"

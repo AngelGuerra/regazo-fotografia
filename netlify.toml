@@ -6,3 +6,8 @@
     X-Content-Type-Options = "nosniff"
     Content-Security-Policy = "default-src https: 'unsafe-inline';"
     Strict-Transport-Security = "max-age=63072000; includeSubDomains; preload"
+
+[[redirects]]
+  from = "/contacta"
+  to = "/"
+  status = 301

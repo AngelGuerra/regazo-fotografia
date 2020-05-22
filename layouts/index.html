@@ -1,16 +1,49 @@
 {{ partial "header" .}}
 
-<h1>{{ .Title | markdownify }}</h1>
-{{ .Content }}
+<section>
+  <h1>{{ .Title | markdownify }}</h1>
+  {{ .Content }}
+</section>
 
-<h2>Último trabajo en la web</h2>
-  {{ $pages := where site.RegularPages "Type" "in" .Site.Params.mainSections }}
-  {{ range first 1 $pages }}
-    {{ if in .Site.Params.mainSections "portfolio" }}
-      {{ partial "portfolio/item" .}}
-    {{ else if in .Site.Params.mainSections "post" }}
-      {{ partial "post/item" .}}
-    {{ end }}
-  {{ end }}
+<hr class="my-16 border-t-2 border-gray-650" />
+
+{{ $pages := (where .Site.RegularPages "Section" "==" "portfolio") }}
+{{ if gt (len $pages) 0 }}
+  <section id="portfolio">
+    <header>
+      <h2>Galerías</h2>
+    </header>
+
+    <section class="flex flex-row flex-wrap justify-between -mb-8">
+      {{ range first 6 $pages }}
+        {{ partial "portfolio/item" .}}
+      {{ end }}
+    </section>
+  </section>
+{{ end }}
+
+{{ $pages := (where .Site.RegularPages "Section" "==" "post") }}
+{{ if gt (len $pages) 0 }}
+  <section id="entradas">
+    <header>
+      <h2>Entradas</h2>
+    </header>
+
+    <section class="flex flex-row flex-wrap justify-between -mb-8">
+      {{ range first 6 $pages }}
+        {{ partial "post/item" .}}
+      {{ end }}
+    </section>
+  </section>
+{{ end }}
+
+<hr class="my-16 border-t-2 border-gray-650" />
+
+<section id="contacta-conmigo">
+  <header>
+    <h2>Contacta</h2>
+  </header>
+  {{ partial "contact" .}}
+</section>
 
 {{ partial "footer" .}}

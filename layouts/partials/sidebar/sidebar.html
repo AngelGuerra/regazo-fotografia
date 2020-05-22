@@ -1,29 +1,25 @@
-<header style="{{ partial "sidebar/style" . | safeCSS }}">
+<header class="col-span-3 px-16 py-24 lg:py-32 flex flex-col items-center lg:items-end justify-between bg-cover bg-center lg:fixed lg:h-screen lg:w-1/3" style="{{ partial "sidebar/style" . | safeCSS }}">
+  <section class="text-center lg:text-right pb-6">
+    <h2 class="text-3xl lg:text-xl xl:text-2xl text-gray-100">
+      {{ .Site.Params.intro | default "Hola, Soy Ángel Guerra" | safeHTML }}
+    </h2>
+  </section>
 
-  <div class="intro">
-    <div class="logo-container">
-      <a href="/">
-        <img src='{{ .Site.Params.sidebar.logo | default "images/edna-west.jpg" | absURL }}' alt="Profile {{ .Title }}" class="rounded-logo">
-      </a>
-    </div>
-    <h2>{{ .Site.Params.intro.main | default "Welcome, I'm John Doe" | emojify }}</h2>
-    <h3>{{ .Site.Params.intro.sub | default "This is my personal website" | emojify }}</h3>
-    <div class="menu">
-      {{ partial "sidebar/menu" . }}
-      {{ if .Site.Params.contact.email }}
-        {{ $email := printf "mailto:%s" .Site.Params.contact.email}}
-        <p>
-            <a href="{{ $email }}" target="_blank" rel="external">
-                {{ .Site.Params.contact.text | emojify }}
-            </a>
-        </p>
-      {{ end }}
-    </div>
-
-  </div>
-
-  <div class="socials">
+  <section class="flex flex-col items-end">
+    <div class="flex flex-row items-start flex-wrap">
       {{ partial "sidebar/social" .}}
-  </div>
-
+    </div>
+    <div class="hidden lg:block text-right text-gray-100 text-sm mt-4">
+      <span class="block">{{ .Site.Copyright }}</span>
+      <span class="block">
+        Hecho con {{ emojify ":heart:" }} por 
+        <a href="https://angelguerra.me" target="_blank" rel="noopener noreferrer">Ángel Guerra</a>
+      </span>
+      <span class="block">
+        <a href="/notas-del-desarrollador" title="Más información sobre esta web">
+          ¿Quieres saber más sobre esta web?
+        </a>
+      </span>
+    </div>
+  </section>
 </header>

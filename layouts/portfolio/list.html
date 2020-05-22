@@ -1,10 +1,17 @@
 {{ partial "header" .}}
 
-  <h1 id="title"> {{ .Title }}</h1>
+<section>
+  <h1>{{ .Title | markdownify }}</h1>
   {{ .Content }}
+</section>
 
+<hr class="my-12 border-t border-dotted border-gray-650" />
+
+{{/* -mb-8 compensa el mb-8 de los items internos, para que quede bien alineado */}}
+<section class="flex flex-row flex-wrap justify-between -mb-8">
   {{ range .Pages.ByDate.Reverse }}
     {{ partial "portfolio/item" .}}
   {{ end }}
+</section>
 
 {{ partial "footer" .}}

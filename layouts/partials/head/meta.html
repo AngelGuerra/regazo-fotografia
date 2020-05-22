@@ -28,24 +28,28 @@
 <meta name="language" content="{{ .Language.LanguageName }}" />
 
 <!-- IMAGE TAGS -->
-<meta property="twitter:card" content="summary_large_image" />
-{{ with .Params.thumbnail }} 
-    <meta itemprop="image" content="{{ . | absURL }}" />
-    <meta property="og:image" content="{{ . | absURL }}" /> 
-    <meta name="twitter:image" content="{{ . | absURL }}" />
-    <meta name="twitter:image:src" content="{{ . | absURL }}" /> 
-{{ else }}
-    <meta itemprop="image" content="{{ .Site.Params.ogimage | absURL }}" />
-    <meta property="og:image" content="{{ .Site.Params.ogimage | absURL }}" />
-    <meta name="twitter:image" content="{{ .Site.Params.ogimage | absURL }}" />
-    <meta name="twitter:image:src" content="{{ .Site.Params.ogimage | absURL }}" /> 
+{{ $baseImageUrl := .Site.Params.ogimage.url | absURL }}
+{{ $queryImageUrl := querify "nf_resize" "smartcrop" "w" .Site.Params.ogimage.width "h" .Site.Params.ogimage.height }}
+{{ .Scratch.Set "finalImage" (print $baseImageUrl "?" $queryImageUrl) }}
+{{ if .Params.thumbnail }}
+    {{ $baseImageUrl := .Params.thumbnail.url | absURL }}
+    {{ $queryImageUrl := querify "nf_resize" "smartcrop" "w" .Params.thumbnail.width "h" .Params.thumbnail.height }}
+    {{ .Scratch.Set "finalImage" (print $baseImageUrl "?" $queryImageUrl) }}
 {{ end }}
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta itemprop="image" content="{{ .Scratch.Get "finalImage" }}" />
+<meta property="og:image" content="{{ .Scratch.Get "finalImage" }}" />
+<meta property="og:image:width" content="{{ .Params.thumbnail.width | default .Site.Params.ogimage.width }}" />
+<meta property="og:image:height" content="{{ .Params.thumbnail.height | default .Site.Params.ogimage.height }}" />
+<meta name="twitter:image" content="{{ .Scratch.Get "finalImage" }}" />
+<meta name="twitter:image:src" content="{{ .Scratch.Get "finalImage" }}" />
 
 <!-- DATE TAGS -->
 <meta property="og:updated_time" content="{{ .Lastmod.Format "2006-01-02T15:04:05Z0700" | safeHTML }}" />
 
 <!-- SITEMAP & RRS FEED TAGS -->
-<link rel="sitemap" type="application/xml" title="Sitemap" href="{{ .Sitemap.Filename | absURL  }}" /> 
+<link rel="sitemap" type="application/xml" title="Sitemap" href="{{ .Sitemap.Filename | absURL  }}" />
 {{ with .OutputFormats.Get "RSS" }}
     <link href="{{ .Permalink }}" rel="alternate" type="application/rss+xml" title="{{ $.Site.Title }}" />
     <link href="{{ .Permalink }}" rel="feed" type="application/rss+xml" title="{{ $.Site.Title }}" />
@@ -55,13 +59,13 @@
 <!-- To make sure this renders only in the article page, we check the section -->
 {{ if eq .Section "portfolio" }}
     <meta property="og:type" content="article" />
-    <meta property="article:publisher" content="{{ .Site.Params.social.facebook }}" /> 
-    <meta property="og:article:published_time" content="{{ .Date.Format "2006-01-02T15:04:05Z0700" | safeHTML }}" /> 
+    <meta property="article:publisher" content="{{ .Site.Params.social.facebook }}" />
+    <meta property="og:article:published_time" content="{{ .Date.Format "2006-01-02T15:04:05Z0700" | safeHTML }}" />
     <meta property="article:published_time" content="{{ .Date.Format "2006-01-02T15:04:05Z0700" | safeHTML }}" />
   
     <meta property="og:article:author" content="{{ humanize .Params.author | default .Site.Params.author }}" />
-    <meta property="article:author" content="{{ humanize .Params.author | default .Site.Params.author }}" /> 
-    <meta name="author" content="{{ humanize .Params.author | default .Site.Params.author }}" /> 
+    <meta property="article:author" content="{{ humanize .Params.author | default .Site.Params.author }}" />
+    <meta name="author" content="{{ humanize .Params.author | default .Site.Params.author }}" />
   
     {{ with .Params.work }} 
         <meta name="news_keywords" content="fotografia,{{ delimit . "," }}" />
@@ -88,21 +92,21 @@
             "dateModified": "{{ .Lastmod.Format "2006-01-02" }}",
             "image": {
                 "@type": "imageObject",
-                "url": "{{ .Params.thumbnail | default .Site.Params.ogimage | absURL }}"
+                "url": "{{ .Scratch.Get "finalImage" }}"
             },
             "publisher": {
                 "@type": "Organization",
                 "name": "{{ .Site.Title }}",
                 "logo": {
                     "@type": "imageObject",
-                    "url": "{{ .Site.Params.ogimage | absURL }}"
+                    "url": "{{ .Site.Params.ogimage.url | absURL }}"
                 }
             }
         }
     </script>
 {{ else }}
     <!-- WEBSITE TAGS -->
-    <meta property="og:type" content="website" /> 
+    <meta property="og:type" content="website" />
     <meta name="author" content="{{ .Site.Params.author }}" />
     <script defer type="application/ld+json">
         { 
@@ -114,7 +118,7 @@
                 "{{ .Site.Params.social.instagram }}"
             ], 
             "name": "{{ .Title }}",
-            "image": "{{ .Site.Params.ogimage | absURL }}" 
+            "image": "{{ .Scratch.Get "finalImage" }}" 
         }
     </script>
 {{ end }}
@@ -133,7 +137,7 @@
 
 <!-- SEARCH ENGINE TAGS -->
 
-<meta name="robots" content="{{ .Params.robots | default "index, follow" }}" /> 
+<meta name="robots" content="{{ .Params.robots | default "index, follow" }}" />
 <meta name="googlebot" content="{{ .Params.robots | default "index, follow" }}" />
 
 <!-- SPECIFIC SOCIAL MEDIA TAGS -->
@@ -148,14 +152,10 @@
 <meta name="msapplication-TileColor" content='{{- .Site.Params.accentColor | default "#fafafa" -}}' />
 
 <!-- Other -->
-<meta name="imagemode" content="force" />
-<meta name="coverage" content="Worldwide" /> 
-<meta name="distribution" content="Global" />
-<meta name="HandheldFriendly" content="True" /> 
 <meta name="msapplication-tap-highlight" content="no" />
-<meta name="apple-mobile-web-app-title" content="{{ .Site.Params.sitename }}" /> 
+<meta name="apple-mobile-web-app-title" content="{{ .Site.Params.sitename }}" />
 <meta name="apple-mobile-web-app-capable" content="yes" />
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-<meta name="apple-touch-fullscreen" content="yes" /> 
+<meta name="apple-touch-fullscreen" content="yes" />
 <meta name="google-site-verification" content="{{ .Site.Params.googleSiteVerification }}" />
 {{ hugo.Generator }}

@@ -1,18 +1,19 @@
-<div class="portfolio-list">
-  <a href="{{.Permalink}}">
-    <div class="portfolio-container">
-      <img
-        src="{{ .Params.Thumbnail }}?nf_resize=fit&w=720"
-        srcset="{{ .Params.Thumbnail }}?nf_resize=fit&w=720 720w, {{ .Params.Thumbnail }}?nf_resize=fit&w=580 580w"
-        sizes="(max-width: 768px) 720px, (max-width: 1024px) 580px, 720px"
-        title="{{.Title}}"
-        alt="{{.Title}}" />
-      <div class="img-overlay"></div>
-      <div class="portfolio-details">
-        <h2><span>{{ .Title }}</span></h2>
-        <p class="small">{{ delimit .Params.Work ", " | safeHTML }}</p>
-        <p class="small">{{ .Params.jobDate }}</p>
-      </div>
-    </div>
+<div class="w-full md:w-49/100 mb-8 shadow hover:shadow-md rounded">
+  <a class="inline-block h-full flex flex-col" href="{{.Permalink}}" title="">
+    <img
+      src="{{ .Params.Thumbnail.url }}?nf_resize=fit&w=720"
+      srcset="{{ .Params.Thumbnail.url }}?nf_resize=fit&w=720 720w, {{ .Params.Thumbnail.url }}?nf_resize=fit&w=580 580w"
+      sizes="(max-width: 768px) 720px, (max-width: 1024px) 580px, 720px"
+      title="{{.Title}}"
+      alt="{{.Title}}"
+      class="mb-4 rounded-t" />
+    <section class="px-3 pb-3 h-full flex flex-col">
+      <h3 class="mb-3">{{ .Title }}</h3>
+      <p class="text-sm">{{ .Description }}...</p>
+      <p class="text-sm flex justify-between mt-auto">
+        <span>{{ delimit .Params.Work ", " | safeHTML }}</span>
+        <span>{{ .Params.jobDate }}</span>
+      </p>
+    </section>
   </a>
 </div>

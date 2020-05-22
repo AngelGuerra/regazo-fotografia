@@ -1,0 +1,91 @@
+<p>
+  Si tienes cualquier duda o necesidad, puedes contactar a través de este formulario y tan pronto como sea posible me
+  pondré en contacto contigo.
+</p>
+
+<p>Cuéntame tu idea y hablamos para ver si cubro tu necesidad.</p>
+
+<form name="contact" action="/gracias" data-netlify="true">
+  <div class="w-full mb-4">
+    <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="name">
+      Nombre *
+    </label>
+    <input
+      class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+      id="name"
+      name="name"
+      type="text"
+      placeholder="¿Cómo te llamas?"
+      required
+    />
+  </div>
+
+  <div class="w-full mb-4">
+    <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="email">
+      Correo electrónico *
+    </label>
+    <input
+      class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+      id="email"
+      name="email"
+      type="email"
+      placeholder="¿Cuál es tu correo electrónico?"
+      required
+    />
+  </div>
+
+  <div class="w-full mb-4">
+    <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="phone">
+      Teléfono
+    </label>
+    <input
+      class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+      id="phone"
+      name="phone"
+      type="tel"
+      placeholder="¿Cuál es tu número de teléfono?"
+    />
+  </div>
+
+  <div class="w-full mb-4">
+    <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="phone">
+      Mensaje *
+    </label>
+    <textarea
+      class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+      id="message"
+      name="message"
+      placeholder="¿Qué necesitas?"
+      rows="5"
+      required
+    ></textarea>
+  </div>
+
+  <div class="w-full mb-4">
+    <input class="mr-2 leading-tight" id="legal" name="legal" type="checkbox" aria-describedby="legalhelp" required />
+    <label for="legal">
+      Acepto la
+      <a href="/privacidad/" title="Política de privacidad de Regazo Fotografía">política de privacidad</a>
+    </label>
+  </div>
+
+  <div class="w-full mb-4">
+    <input class="mr-2 leading-tight" id="news" name="news" type="checkbox" required />
+    <label for="news">
+      Quiero recibir noticias relacionadas de Regazo Fotografía
+    </label>
+  </div>
+
+  <button
+    class="shadow bg-blue-900 hover:bg-blue-800 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded"
+    type="submit"
+  >
+    Enviar
+  </button>
+
+  <p class="mt-3 mb-0 text-sm">
+    En Regazo Fotografía no compartimos la información con terceros y los datos que recogemos en este formulario son con
+    el único objetivo de poder ayudarte, para cumplir la Ley debes aceptar la
+    <a href="/privacidad/" title="Política de privacidad de Regazo Fotografía">política de privacidad</a>.
+  </p>
+</form>

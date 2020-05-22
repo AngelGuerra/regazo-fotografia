@@ -1,8 +1,10 @@
 ---
 title: Fotógrafa autodidacta y mamá
 description: Hola, mi nombre es Luna y aquí te cuento un poco sobre mí y sobre las personas a las que tengo presentes a la hora de realizar mi proyecto
-thumbnail: /images/profile.JPG
-# images: ["/images/luna.jpg"]
+# thumbnail:
+#   url: /images/profile.JPG?nf_resize=smartcrop&w=1080&h=1080
+#   width: 1080
+#   height: 1080
 ---
 
 ### Luna L. Gutiérrez
@@ -32,6 +34,8 @@ Ella me ayuda compartiendo su experiencia atendiendo partos, viviendo de guardia
 Por fantásticas coincidencias de la vida él se puso en contacto con Valle y nos ofreció humildemente toda su ayuda. Inmerso en el mundo de los embarazos, sesiones de familia, partos, etc...no podía ser más oportuna y maravillosa su gran generosidad.
 
 ### Ángel
+
+[https://angelguerra.me/](https://angelguerra.me/ "Página web de Ángel")
 
 Mi compañero de vida, que me da fuerza, tiempo, tranquilidad, motivación y confianza. Que me tiene la web lista aún sin tener yo nada estructurado pero no me mete presión y comprende, a veces mejor que yo misma, que en plena crianza no soy muy productiva y menos para asuntos propios que siempre pasan a último lugar.
 

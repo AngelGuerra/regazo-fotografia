@@ -7,7 +7,10 @@ jobDate: 03/2019
 work: [lactancia, familia]
 # techs: [javascript, D3]
 # designs: [Photoshop]
-thumbnail: /images/recuerdos-de-una-lactancia/DSCF6006.JPG
+thumbnail:
+  url: /images/recuerdos-de-una-lactancia/DSCF6006.JPG
+  width: 1080
+  height: 1080
 # projectUrl: https://www.sampleorganization.org
 images:
   - src: /images/recuerdos-de-una-lactancia/DSCF6006.JPG

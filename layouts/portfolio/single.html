@@ -1,42 +1,53 @@
 {{ partial "header" .}}
 
-<h1>{{ .Title }}</h1>
-<div class="tags">
-  {{ partial "portfolio/tags" .}}
-</div>
+<section class="mb-12 pb-12 border-b border-dotted">
+  <section>
+    <h1>{{ .Title }}</h1>
+    <div class="tags">
+      {{ partial "portfolio/tags" .}}
+    </div>
+  </section>
 
-<img
-  src="{{ .Params.Thumbnail }}?nf_resize=fit&w=720"
-  srcset="{{ .Params.Thumbnail }}?nf_resize=fit&w=720 720w, {{ .Params.Thumbnail }}?nf_resize=fit&w=580 580w"
-  sizes="(max-width: 768px) 720px, (max-width: 1024px) 580px, 720px"
-  title="{{ .Title }}"
-  alt="{{ .Title }}" />
-
-<section{{ if .Params.customtextclass }} class="{{ .Params.customtextclass }}"{{ end }}>
   {{ .Content }}
+
+  {{ if .Params.testimonial }}
+    {{ with .Params.testimonial }}
+      {{ partial "portfolio/testimonial" . }}
+    {{ end }}
+  {{ end }}
 </section>
 
-{{ if .Params.testimonial }}
-  <div class="testimonial-list">
-    {{ with .Params.testimonial }} {{ partial "portfolio/testimonial" . }} {{ end }}
-  </div>
-{{ end }}
-
 {{ if .Params.images }}
-  <div class="gallery" itemscope itemtype="http://schema.org/ImageGallery">
+  <div
+    class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-2 xl:gap-3 grid-flow-row"
+    itemscope
+    itemtype="http://schema.org/ImageGallery"
+    data-photoswipe
+  >
     {{ range $index, $image := .Params.images }}
-      <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject"{{ if $image.vertical }} class="vertical"{{ end }}>
-        <a href="{{ $image.src }}?nf_resize=fit&w=1920" itemprop="contentUrl" data-size="1920x1280">
+      <figure
+        itemprop="associatedMedia"
+        itemscope
+        itemtype="http://schema.org/ImageObject"
+        {{ if $image.vertical }}class="md:row-span-2"{{ end }}
+      >
+        <a
+          href="{{ $image.src }}?nf_resize=fit&w=1920"
+          itemprop="contentUrl"
+          {{ if $image.vertical }}data-size="1280x1920"{{ else }}data-size="1920x1280"{{ end }}
+        >
           <img
             srcset="{{ $image.src }}?nf_resize=fit&w=720 720w, {{ $image.src }}?nf_resize=fit&w=300 300w, {{ $image.src }}?nf_resize=fit&w=240 240w"
             sizes="(max-width: 768px) 720px, (max-width: 1024px) 300px, 240px"
             src="{{ $image.src }}?nf_resize=fit&w=1920"
             alt="{{ $image.alt }}"
-            itemprop="thumbnail" />
+            itemprop="thumbnail"
+            class="shadow hover:shadow-md rounded"
+          />
         </a>
 
-        <figcaption itemprop="caption description">
-          <span itemprop="copyrightHolder">Fotografía: &copy; Regazo Fotografía</span>
+        <figcaption class="hidden" itemprop="caption description copyrightHolder">
+          Fotografía: &copy; Regazo Fotografía
         </figcaption>
       </figure>
     {{ end }}

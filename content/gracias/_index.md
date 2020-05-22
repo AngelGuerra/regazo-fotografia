@@ -1,6 +1,6 @@
 ---
 title: Muchas gracias por contactar
-description: Gracias por contactar con nosotras a través de este formulario, trataré de darte respuesta tan pronto como sea posible
+description: Gracias por contactar a través de este formulario, trataré de darte respuesta tan pronto como sea posible
 robots: noindex, nofollow
 private: true
 # images: []

@@ -1,9 +1,4 @@
-<div class="testimonial-container">
-  {{ if .image }}<img
-    class="rounded-img"
-    src="{{ .image }}?nf_resize=smartcrop&w=150&h=150"
-    alt="{{ .name }}"
-    title="{{ .name }}"
-  />{{ end }}
-  <blockquote class="testimonial-text">{{ .text }}<strong> - {{ .name }}</strong></blockquote>
+<div class="border border-l-4 rounded px-6 py-3 mt-6 text-xl shadow-md">
+  <blockquote>{{ .text }}</blockquote>
+  <strong class="block text-right">{{ .name }}</strong>
 </div>

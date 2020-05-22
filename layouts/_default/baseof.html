@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html prefix="og: http://ogp.me/ns#" lang="{{ .Language }}">
     {{- partial "head.html" . -}}
-    <body>
+    <body class="grid grid-cols-2">
         {{- partial "header.html" . -}}
         <div id="content">
         {{- block "main" . }}{{- end }}

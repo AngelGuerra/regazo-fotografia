@@ -7,6 +7,9 @@ work: []
 techs: []
 designs: []
 thumbnail: 
+  url: 
+  width: 
+  height: 
 projectUrl: 
 testimonial:
   name: 

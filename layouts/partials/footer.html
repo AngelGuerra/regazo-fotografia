@@ -1,25 +1,17 @@
+</section>
 </main>
-</div>
-<footer>
-  <div class="footer-wrapper">
-    <p>Hecho con {{ emojify ":heart:" }} por Ángel Guerra &mdash; {{ .Site.Copyright }}</p>
-    <p>Utiliza <a href="//gohugo.io/" target="_blank" rel="external noopener noreferrer">Hugo</a>, el tema <a href="//github.com/bjacquemet/personal-web" target='_blank' rel="external noopener noreferrer">Personal Web</a> y se despliega con <a href="//www.netlify.com/" target="_blank" rel="external noopener noreferrer">Netlify</a>.</p>
-  </div>
+<footer class="lg:hidden col-span-3 lg:col-span-2 lg:col-start-2 flex flex-col justify-center items-center p-16 bg-blue-900 text-gray-100 text-center">
+  <p>Hecho con {{ emojify ":heart:" }} por Ángel Guerra &mdash; {{ .Site.Copyright }}</p>
+  <a href="/notas-del-desarrollador" title="Más información sobre esta web">
+    ¿Quieres saber más sobre esta web?
+  </a>
 </footer>
 
 {{ partial "gallery" .}}
 
-{{ $photoswipe := resources.Get "vendor/photoswipe/dist/photoswipe.min.js" }}
-{{ $photoswipeUIDefault := resources.Get "vendor/photoswipe/dist/photoswipe-ui-default.min.js" }}
-{{ $gallery := resources.Get "js/gallery.js" | minify }}
-{{ $common := resources.Get "js/common.js" | minify }}
-
-<script src="{{ $photoswipe.Permalink }}" integrity="{{ $photoswipe.Data.Integrity }}"></script>
-<script src="{{ $photoswipeUIDefault.Permalink }}" integrity="{{ $photoswipeUIDefault.Data.Integrity }}"></script>
-<script src="{{ $gallery.Permalink }}" integrity="{{ $gallery.Data.Integrity }}"></script>
-<script src="{{ $common.Permalink }}" integrity="{{ $common.Data.Integrity }}"></script>
 {{ if eq hugo.Environment "production" }}
   {{ partial "scripts/analytics" . }}
-{{ end }}
+{{ end }} -->
+<script src="/assets/webpacked.js"></script>
 </body>
 </html>

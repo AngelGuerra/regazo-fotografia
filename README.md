@@ -8,9 +8,15 @@
 
 ## Desarrollo
 
+### Pronto documentaré el proyecto... Dios Mediante
+
 ### Local
 
 ```bash
+# Problemas con openSUSE y snap
+sudo systemctl start snapd
+sudo apparmor_parser -r /var/lib/snapd/apparmor/profiles/*
+
 # Instala la versión extended de Hugo
 snap install hugo --channel=extended # OpenSUSE
 

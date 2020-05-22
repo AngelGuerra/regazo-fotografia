@@ -33,7 +33,7 @@
   </div>
 {{ end }}
 
-<div class="portfolio-tags">
+<div class="inline-flex">
   {{ partial "svg" (dict "iconName" "calendar" "size" "18px")}}
-  <span>{{ .Params.jobDate }}</span>
+  <span class="ml-2">{{ .Params.jobDate }}</span>
 </div>

@@ -7,9 +7,11 @@ jobDate: 12/2017
 work: [parto, familia]
 # techs: [javascript, D3]
 # designs: [Photoshop]
-thumbnail: /images/parto-de-carlota/parto_carlota_01.JPG
+thumbnail:
+  url: /images/parto-de-carlota/parto_carlota_01.JPG?nf_resize=smartcrop&w=1080&h=1080
+  width: 1080
+  height: 1080
 # projectUrl: https://www.sampleorganization.org
-customtextclass: content-centered 
 images:
   - src: /images/parto-de-carlota/parto_carlota_01.JPG
     alt: Blanco y negro. Carlota, en la piscina de partos, abraza contra su pecho a su bebé recién nacido que da un lloro con su carita arrugada y la boquita abierta
@@ -87,9 +89,7 @@ images:
     alt: Leo, en el regazo de Carlota, es arropado por un pañuelo con los colores del arcoíris, arcoíris que lució el cielo esa misma mañana, bebé arcoíris es el que llega tras haber sufrido la pérdida de un anterior hijo
 testimonial:
   name: Carlota
-  # role: CEO @Example
-  # image: /images/parto-de-carlota/parto_carlota_03.JPG
-  text: Recomendaría a Luna sin duda alguna a todas las familias que quieran tener un recuerdo inolvidable del nacimiento de sus hijes, por su profesionalidad y el cuidado y el amor que pone en su trabajo
+  text: Recomendaría a Luna sin duda alguna a todas las familias que quieran tener un recuerdo inolvidable del nacimiento de sus hijes, por su profesionalidad y el cuidado y el amor que pone en su trabajo.
 ---
 
 Diciembre\
