@@ -1,3 +1,4 @@
+import initLazyload from "./modules/initLazyload";
 import initPhotoswipe from "./modules/initPhotoswipe";
 
 /**
@@ -23,6 +24,7 @@ document.addEventListener("DOMContentLoaded", () => {
   );
 
   initPhotoswipe();
+  initLazyload();
 });
 
 document.addEventListener("contextmenu", (event) => {

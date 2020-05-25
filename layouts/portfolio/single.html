@@ -37,9 +37,10 @@
           {{ if $image.vertical }}data-size="1280x1920"{{ else }}data-size="1920x1280"{{ end }}
         >
           <img
-            srcset="{{ $image.src }}?nf_resize=fit&w=720 720w, {{ $image.src }}?nf_resize=fit&w=300 300w, {{ $image.src }}?nf_resize=fit&w=240 240w"
-            sizes="(max-width: 768px) 720px, (max-width: 1024px) 300px, 240px"
-            src="{{ $image.src }}?nf_resize=fit&w=1920"
+            loading="lazy"
+            data-srcset="{{ $image.src }}?nf_resize=fit&w=720 720w, {{ $image.src }}?nf_resize=fit&w=300 300w, {{ $image.src }}?nf_resize=fit&w=240 240w"
+            data-sizes="(max-width: 768px) 720px, (max-width: 1024px) 300px, 240px"
+            data-src="{{ $image.src }}?nf_resize=fit&w=1920"
             alt="{{ $image.alt }}"
             itemprop="thumbnail"
             class="shadow hover:shadow-md rounded"
