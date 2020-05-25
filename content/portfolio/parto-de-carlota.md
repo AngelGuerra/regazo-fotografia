@@ -8,7 +8,7 @@ work: [parto, familia]
 # techs: [javascript, D3]
 # designs: [Photoshop]
 thumbnail:
-  url: /images/parto-de-carlota/parto_carlota_01.JPG?nf_resize=smartcrop&w=1080&h=1080
+  url: /images/parto-de-carlota/parto_carlota_01.JPG
   width: 1080
   height: 1080
 # projectUrl: https://www.sampleorganization.org
