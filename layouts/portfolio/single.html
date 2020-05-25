@@ -38,15 +38,14 @@
         >
           <img
             loading="lazy"
-            data-srcset="{{ $image.src }}?nf_resize=fit&w=720 720w, {{ $image.src }}?nf_resize=fit&w=300 300w, {{ $image.src }}?nf_resize=fit&w=240 240w"
-            data-sizes="(max-width: 768px) 720px, (max-width: 1024px) 300px, 240px"
-            data-src="{{ $image.src }}?nf_resize=fit&w=1920"
+            data-srcset="{{ $image.src }}?nf_resize=fit&w=720 720w, {{ $image.src }}?nf_resize=fit&w=445 445w, {{ $image.src }}?nf_resize=fit&w=360 360w, {{ $image.src }}?nf_resize=fit&w=380 380w, {{ $image.src }}?nf_resize=fit&w=600 600w"
+            data-sizes="(min-width: 640px) 720px, (min-width: 768px) 445px, (min-width: 1024px) 360px, (min-width: 1280px) 380px, 600px"
+            data-src="{{ $image.src }}?nf_resize=fit&w=600"
             alt="{{ $image.alt }}"
             itemprop="thumbnail"
             class="shadow hover:shadow-md rounded object-cover h-full"
           />
         </a>
-
         <figcaption class="hidden" itemprop="caption description copyrightHolder">
           Fotografía: &copy; Regazo Fotografía
         </figcaption>
