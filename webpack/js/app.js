@@ -14,7 +14,7 @@ const getEventTarget = (e) => {
 document.addEventListener("DOMContentLoaded", () => {
   console.log("%cBienvenid@ a Regazo Fotografía", "font-weight: bold; font-size: 1.5rem; color: #2a4365;");
   console.log(
-    "%cVeo que estás echando un vistazo por aquí, si quieres saber más sobre cómo está construida esta web visita https://www.regazofotografia.com/notas-del-desarrolador",
+    "%cVeo que estás echando un vistazo por aquí, si quieres saber más sobre cómo está construida esta web visita https://www.regazofotografia.com/notas-del-desarrollador",
     "font-size: 1.25rem; color: #2a4365;"
   );
   console.log(

@@ -47,7 +47,9 @@ blockquote {
     Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 }
 
+/*! purgecss start ignore */
 #breadcrumbs li:not(:last-child)::after {
   @apply mx-1 font-bold text-gray-800;
   content: "\00BB";
 }
+/*! purgecss end ignore */
