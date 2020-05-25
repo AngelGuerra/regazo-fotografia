@@ -8,7 +8,9 @@
 export default function initLazyload() {
   const images = document.querySelectorAll("img[loading]");
 
-  if (!images.length) return;
+  if (!images.length) {
+    return;
+  }
 
   if ("loading" in HTMLImageElement.prototype) {
     images.forEach((img) => {
@@ -21,20 +23,18 @@ export default function initLazyload() {
   }
 
   if ("IntersectionObserver" in window) {
-    let lazyImageObserver = new IntersectionObserver(
-      function (entries, observer) {
-        entries.forEach(function (entry) {
-          if (entry.isIntersecting) {
-            console.log(entry.isIntersecting);
-            let lazyImage = entry.target;
-            lazyImage.src = lazyImage.dataset.src;
-            lazyImage.srcset = lazyImage.dataset.srcset;
-            lazyImage.sizes = lazyImage.dataset.sizes;
-            lazyImageObserver.unobserve(lazyImage);
-          }
-        });
-      }
-    );
+    let lazyImageObserver = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          console.log(entry.isIntersecting);
+          let lazyImage = entry.target;
+          lazyImage.src = lazyImage.dataset.src;
+          lazyImage.srcset = lazyImage.dataset.srcset;
+          lazyImage.sizes = lazyImage.dataset.sizes;
+          lazyImageObserver.unobserve(lazyImage);
+        }
+      });
+    });
 
     [].slice.call(images).forEach(function (img) {
       lazyImageObserver.observe(img);
